@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,9 @@ Route::post('/mail', 'front\IndexController@mail')->name('mail');
 Route::get('/meet', 'front\IndexController@meet')->name('meet');
 Route::get('/milk', 'front\IndexController@milk')->name('milk');
 
-
 Route::get('/register', 'UserController@create')->name('register.create');
 Route::post('/register', 'UserController@store')->name('register.store');
+
+Route::prefix('admin')->namespace('admin')->group(function () {
+    Route::get('/', 'IndexController@index')->name('admin.index');
+});

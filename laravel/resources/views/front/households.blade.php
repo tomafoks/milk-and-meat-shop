@@ -21,20 +21,20 @@
 				<h3>Продукция SIEL<span class="blink_me"></span></h3>
 			</div>
 			<div class="w3ls_w3l_banner_nav_right_grid w3ls_w3l_banner_nav_right_grid_sub">
-				<h3>Household Products</h3>
+				<h3>Продукция SIEL</h3>
 				<div class="w3ls_w3l_banner_nav_right_grid1">
 					<h6>cleaning</h6>
 					<div class="col-md-3 w3ls_w3l_banner_left">
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+								<img src="images/offer.png" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/17.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/17.png" alt=" " class="img-responsive" /></a>
 											<p>dishwash gel, lemon  (1.5 ltr)</p>
 											<h4>$8.00 <span>$10.00</span></h4>
 										</div>
@@ -64,13 +64,13 @@
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+								<img src="images/offer.png" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/18.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/18.png" alt=" " class="img-responsive" /></a>
 											<p>dish wash bar (500 gm)</p>
 											<h4>$2.00 <span>$4.00</span></h4>
 										</div>
@@ -100,13 +100,13 @@
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+								<img src="images/offer.png" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/19.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/19.png" alt=" " class="img-responsive" /></a>
 											<p>air freshener (50 gm)</p>
 											<h4>$3.00 <span>$5.00</span></h4>
 										</div>
@@ -136,13 +136,13 @@
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+								<img src="images/offer.png" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/20.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/20.png" alt=" " class="img-responsive" /></a>
 											<p>toilet cleaner expert (1 ltr)</p>
 											<h4>$6.00 <span>$7.00</span></h4>
 										</div>
@@ -176,13 +176,13 @@
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+								<img src="images/offer.png" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/21.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/21.png" alt=" " class="img-responsive" /></a>
 											<p>princeware packaging container pack (6 no's)</p>
 											<h4>$8.00 <span>$10.00</span></h4>
 										</div>
@@ -212,13 +212,13 @@
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+								<img src="images/offer.png" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/22.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/22.png" alt=" " class="img-responsive" /></a>
 											<p>signoraware container center press (900 ml)</p>
 											<h4>$5.00 <span>$8.00</span></h4>
 										</div>
@@ -247,12 +247,12 @@
 					<div class="col-md-3 w3ls_w3l_banner_left">
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-							<div class="tag"><img src="laravel/public/images/tag.png" alt=" " class="img-responsive" /></div>
+							<div class="tag"><img src="images/tag.png" alt=" " class="img-responsive" /></div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/23.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/23.png" alt=" " class="img-responsive" /></a>
 											<p>ship stainless steel sauce pan single (1 pc)</p>
 											<h4>$6.00 <span>$8.00</span></h4>
 										</div>
@@ -282,13 +282,13 @@
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+								<img src="images/offer.png" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/24.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/24.png" alt=" " class="img-responsive" /></a>
 											<p>omega stainless steel puri dabba (1 pc)</p>
 											<h4>$6.00 <span>$8.00</span></h4>
 										</div>
@@ -322,13 +322,13 @@
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+								<img src="images/offer.png" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/25.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/25.png" alt=" " class="img-responsive" /></a>
 											<p>food for adult dogs (80 gms)</p>
 											<h4>$3.00 <span>$4.00</span></h4>
 										</div>
@@ -358,13 +358,13 @@
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+								<img src="images/offer.png" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/26.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/26.png" alt=" " class="img-responsive" /></a>
 											<p>young adult dogs (1.2 kg)</p>
 											<h4>$6.00 <span>$10.00</span></h4>
 										</div>
@@ -393,12 +393,12 @@
 					<div class="col-md-3 w3ls_w3l_banner_left">
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-							<div class="tag"><img src="laravel/public/images/tag.png" alt=" " class="img-responsive" /></div>
+							<div class="tag"><img src="images/tag.png" alt=" " class="img-responsive" /></div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/27.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/27.png" alt=" " class="img-responsive" /></a>
 											<p>cat food ocean fish (1.4 kg)</p>
 											<h4>$6.00 <span>$7.00</span></h4>
 										</div>
@@ -428,13 +428,13 @@
 						<div class="hover14 column">
 						<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+								<img src="images/offer.png" alt=" " class="img-responsive" />
 							</div>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="single.html"><img src="laravel/public/images/28.png" alt=" " class="img-responsive" /></a>
+											<a href="single.html"><img src="images/28.png" alt=" " class="img-responsive" /></a>
 											<p>chicken in jelly can (400 gm)</p>
 											<h4>$7.00 <span>$9.00</span></h4>
 										</div>

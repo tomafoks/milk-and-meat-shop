@@ -35,8 +35,8 @@
         </div>
     </section>
     <!-- flexSlider -->
-        <link rel="stylesheet" href="laravel/public/css/flexslider.css" type="text/css" media="screen" property="" />
-        <script defer src="laravel/public/js/jquery.flexslider.js"></script>
+        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
+        <script defer src="js/jquery.flexslider.js"></script>
         <script type="text/javascript">
         $(window).load(function(){
           $('.flexslider').flexslider({
@@ -58,7 +58,7 @@
     <div class="wthree_banner_bottom_left_grid_sub1">
         <div class="col-md-4 wthree_banner_bottom_left">
             <div class="wthree_banner_bottom_left_grid">
-                <img src="laravel/public/images/4.jpg" alt=" " class="img-responsive" />
+                <img src="images/4.jpg" alt=" " class="img-responsive" />
                 <div class="wthree_banner_bottom_left_grid_pos">
                     <h4>Discount Offer <span>25%</span></h4>
                 </div>
@@ -66,7 +66,7 @@
         </div>
         <div class="col-md-4 wthree_banner_bottom_left">
             <div class="wthree_banner_bottom_left_grid">
-                <img src="laravel/public/images/5.jpg" alt=" " class="img-responsive" />
+                <img src="images/5.jpg" alt=" " class="img-responsive" />
                 <div class="wthree_banner_btm_pos">
                     <h3>introducing <span>best store</span> for <i>groceries</i></h3>
                 </div>
@@ -74,7 +74,7 @@
         </div>
         <div class="col-md-4 wthree_banner_bottom_left">
             <div class="wthree_banner_bottom_left_grid">
-                <img src="laravel/public/images/6.jpg" alt=" " class="img-responsive" />
+                <img src="images/6.jpg" alt=" " class="img-responsive" />
                 <div class="wthree_banner_btm_pos1">
                     <h3>Save <span>Upto</span> $10</h3>
                 </div>
@@ -92,12 +92,12 @@
         <div class="col-md-3 top_brand_left">
             <div class="hover14 column">
                 <div class="agile_top_brand_left_grid">
-                    <div class="tag"><img src="laravel/public/images/tag.png" alt=" " class="img-responsive" /></div>
+                    <div class="tag"><img src="images/tag.png" alt=" " class="img-responsive" /></div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block" >
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img title=" " alt=" " src="laravel/public/images/1.png" /></a>		
+                                    <a href="single.html"><img title=" " alt=" " src="images/1.png" /></a>
                                     <p>fortune sunflower oil</p>
                                     <h4>$7.99 <span>$10.00</span></h4>
                                 </div>
@@ -115,9 +115,9 @@
                                             <input type="hidden" name="cancel_return" value=" " />
                                             <input type="submit" name="submit" value="Add to cart" class="button" />
                                         </fieldset>
-                                            
+
                                     </form>
-                            
+
                                 </div>
                             </div>
                         </figure>
@@ -132,7 +132,7 @@
                         <figure>
                             <div class="snipcart-item block" >
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img title=" " alt=" " src="laravel/public/images/3.png" /></a>		
+                                    <a href="single.html"><img title=" " alt=" " src="images/3.png" /></a>
                                     <p>basmati rise (5 Kg)</p>
                                     <h4>$11.99 <span>$15.00</span></h4>
                                 </div>
@@ -162,13 +162,13 @@
             <div class="hover14 column">
                 <div class="agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+                        <img src="images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="laravel/public/images/2.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="images/2.png" alt=" " class="img-responsive" /></a>
                                     <p>Pepsi soft drink (2 Ltr)</p>
                                     <h4>$8.00 <span>$10.00</span></h4>
                                 </div>
@@ -198,13 +198,13 @@
             <div class="hover14 column">
                 <div class="agile_top_brand_left_grid">
                     <div class="agile_top_brand_left_grid_pos">
-                        <img src="laravel/public/images/offer.png" alt=" " class="img-responsive" />
+                        <img src="images/offer.png" alt=" " class="img-responsive" />
                     </div>
                     <div class="agile_top_brand_left_grid1">
                         <figure>
                             <div class="snipcart-item block">
                                 <div class="snipcart-thumb">
-                                    <a href="single.html"><img src="laravel/public/images/4.png" alt=" " class="img-responsive" /></a>
+                                    <a href="single.html"><img src="images/4.png" alt=" " class="img-responsive" /></a>
                                     <p>dogs food (4 Kg)</p>
                                     <h4>$9.00 <span>$11.00</span></h4>
                                 </div>
