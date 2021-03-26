@@ -5,9 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class Product extends Model
 {
+    protected $fillable = [
+        'title',
+        'description',
+        'quantity',
+        'price',
+        'category_id',
+        'thumbnail',
+    ];
     use Sluggable;
 
     /**
@@ -32,5 +42,24 @@ class Product extends Model
     function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    static function uploadImage(Request $request, $image = null)
+    {
+        if($request->hasFile('thumbnail')) {
+            if($image)
+                Storage::delete($image);
+            $folder = date('Y-m-d');
+            return $request->file('thumbnail')->store('images/'.$folder);
+        }
+        return null;
+    }
+
+    function getImage()
+    {
+        if(!$this->thumbnail){
+            return asset('images/no_image.png');
+        }
+        return asset('upload/'.$this->thumbnail);
     }
 }

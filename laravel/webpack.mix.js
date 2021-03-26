@@ -14,6 +14,8 @@ const mix = require('laravel-mix');
 mix.styles([
     'resources/admin/css/all.css',
     'resources/admin/css/adminlte.css',
+    'resources/admin/plugins/select2/css/select2.css',
+    'resources/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.css',
 ], 'public/assets/admin/css/admin.css');
 
 mix.scripts([
@@ -21,6 +23,7 @@ mix.scripts([
     'resources/admin/plugins/bootstrap/js/bootstrap.bundle.js',
     'resources/admin/js/adminlte.js',
     'resources/admin/js/demo.js',
+    'resources/admin/plugins/select2/js/select2.full.js',
 ], 'public/assets/js/admin.js');
 
 mix.copyDirectory([

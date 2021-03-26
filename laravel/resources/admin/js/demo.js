@@ -8,7 +8,8 @@
 /* eslint-disable camelcase */
 
 (function ($) {
-  'use strict'
+    'use strict'
+    $('.select2').select2()
 
   var $sidebar = $('.control-sidebar')
   var $container = $('<div />', {

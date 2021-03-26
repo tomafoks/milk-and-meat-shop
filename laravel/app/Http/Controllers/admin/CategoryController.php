@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::paginate(5);
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -35,7 +37,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+        ]);
+
+        Category::create($request->all());
+        $request->session()->flash('success', 'Категория добавлена');
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -46,7 +54,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -58,7 +67,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+        ]);
+        $category = Category::find($id);
+        $category->title = $request->title;
+        $category->save();
+        return redirect()->route('categories.index')->with('success', 'Изменения созранены');
     }
 
     /**
@@ -69,6 +84,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::destroy($id);
+        return redirect()->route('categories.index')->with('success', 'Категория удалена');
     }
 }

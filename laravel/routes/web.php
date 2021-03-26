@@ -32,4 +32,6 @@ Route::post('/register', 'UserController@store')->name('register.store');
 
 Route::prefix('admin')->namespace('admin')->group(function () {
     Route::get('/', 'IndexController@index')->name('admin.index');
+    Route::resource('/categories', 'CategoryController');
+    Route::resource('/products', 'ProductController');
 });
