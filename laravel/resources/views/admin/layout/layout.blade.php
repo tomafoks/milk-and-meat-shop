@@ -156,8 +156,10 @@
           <img src="{{asset('assets/admin/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Mr. Admin</a>
+          <a href="#" class="d-block">{{auth()->user()->name}}</a>
         </div>
+        <a href="{{route('logout')}}"><button type="button" class="btn btn-block btn-secondary btn-sm">Выход</button></a>
+
       </div>
 
       <!-- SidebarSearch Form -->

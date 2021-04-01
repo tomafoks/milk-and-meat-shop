@@ -7,36 +7,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Grocery Store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | FAQ :: w3layouts</title>
+<title>Интернет магазин Милена</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Grocery Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
+		function hideURLbar(){ window.scrollTo(0,1); }
+</script>
 <!-- //for-mobile-apps -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
 <!-- font-awesome icons -->
-<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" type="text/css" media="all" />
 <!-- //font-awesome icons -->
 <!-- js -->
-<script src="js/jquery-1.11.1.min.js"></script>
+<script src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
 <!-- //js -->
 <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
-</script>
 <!-- start-smoth-scrolling -->
 </head>
 
@@ -54,32 +45,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</form>
 		</div>
 		<div class="product_list_header">
-			<form action="#" method="post" class="last">
-				@csrf
-                <fieldset>
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="Ваша корзина" class="button" />
-                </fieldset>
-            </form>
-		</div>
-		<div class="w3l_header_right">
-			<ul>
-				<li class="dropdown profile_details_drop">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
-					<div class="mega-dropdown-menu">
-						<div class="w3ls_vegetables">
-							<ul class="dropdown-menu drp-mnu">
-							<li><a href="{{route('register.create')}}">Логин</a></li>
-								<li><a href="{{route('register.create')}}">Регистрация</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-			</ul>
+		<a href="{{route('basket.index')}}">
+				<input type="submit" name="submit" value="Ваша корзина" class="button" />
+			</a>
 		</div>
 		<div class="w3l_header_right1">
-		<h2><a href="{{route('mail')}}">Контакты</a></h2>
+			<h3>
+			<a href="{{route('login')}}" @if (auth()->user()): hidden @endif><span class="label label-default">Вход</span></a>
+			<a href="{{route('register.create')}}" @if (auth()->user()): hidden @endif><span class="label label-default">Регистрция</span></a>
+			<a href="{{route('logout')}}" @if (auth()->guest()): hidden @endif><span class="label label-default">Выход</span></a>
+		</h3>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -122,6 +97,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 <!-- //header -->
+@if (session()->has('success'))
+	<div class="alert alert-success">
+		{{ session('success') }}
+	</div>
+@endif
 
 @yield('breadcrumb')
 
@@ -141,8 +121,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   <!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav nav_1">
-						<li><a href="{{route('households')}}">Домохозяйкам</a></li>
-						<li class="dropdown mega-dropdown active">
+						<li><a href="{{route('products')}}">Все продукты</a></li>
+						<li><a href="{{route('milk')}}">Молочные продукты</a></li>
+						<li><a href="{{route('meet')}}">Мясные продукты</a></li>
+						{{-- <li class="dropdown mega-dropdown active">
 							<a href="{{route('products')}}" class="dropdown-toggle" data-toggle="dropdown">Молоко и мясо<span class="caret"></span></a>
 							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
 								<div class="w3ls_vegetables">
@@ -153,7 +135,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</ul>
 								</div>
 							</div>
-						</li>
+						</li> --}}
 					<li><a href="{{route('shortCode')}}">шаблоны HTML элементов</a></li>
 					</ul>
 				 </div><!-- /.navbar-collapse -->
@@ -233,7 +215,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 <!-- //footer -->
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{asset('js/move-top.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/easing.js')}}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script>
 $(document).ready(function(){
     $(".dropdown").hover(
@@ -265,27 +257,6 @@ $(document).ready(function(){
 			});
 	</script>
 <!-- //here ends scrolling icon -->
-<script src="js/minicart.js"></script>
 <script>
-		paypal.minicart.render();
-
-		paypal.minicart.cart.on('checkout', function (evt) {
-			var items = this.items(),
-				len = items.length,
-				total = 0,
-				i;
-
-			// Count the number of each item in the cart
-			for (i = 0; i < len; i++) {
-				total += items[i].get('quantity');
-			}
-
-			if (total < 3) {
-				alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
-				evt.preventDefault();
-			}
-		});
-
-	</script>
 </body>
 </html>

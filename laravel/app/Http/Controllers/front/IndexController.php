@@ -22,21 +22,6 @@ class IndexController extends Controller
         return view('front.faqs');
     }
 
-    function meet()
-    {
-        return view('front.meet');
-    }
-
-    function milk()
-    {
-        return view('front.milk');
-    }
-
-    function products()
-    {
-        return view('front.products');
-    }
-
     function households()
     {
         return view('front.households');

@@ -58,8 +58,14 @@ class Product extends Model
     function getImage()
     {
         if(!$this->thumbnail){
-            return asset('images/no_image.png');
+            return asset('laravel/public/no_image.png');
         }
-        return asset('upload/'.$this->thumbnail);
+        return asset('laravel/public/uploads/'.$this->thumbnail);
+    }
+
+    // Связь многие ко многим  таблицы 'products' с таблицей 'baskets'
+    function baskets()
+    {
+        return $this->belongsToMany(Basket::class)->withPivot('quantity');
     }
 }

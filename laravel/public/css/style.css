@@ -120,7 +120,8 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 }
 .w3l_header_right{
 	float: left;
-    padding-left: 10em;
+	padding-left: 10em;
+	padding-top: 5px;
 }
 .w3l_header_right ul li {
     list-style-type: none;

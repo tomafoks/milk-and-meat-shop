@@ -17,9 +17,10 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $products = Product::paginate(10);
         $category = Category::all();
-        $products = Product::paginate(4);
-        return view('admin.products.index', compact('products', 'category'));
+        $cat = $category->pluck('title', 'id')->toArray();
+        return view('admin.products.index', compact('products', 'cat'));
     }
 
     /**
@@ -50,7 +51,6 @@ class ProductController extends Controller
             'thumbnail' => 'nullable|image',
         ]);
         $data = $request->all();
-
         $data['thumbnail'] = Product::uploadImage($request);
 
         $product = Product::create($data);
@@ -66,7 +66,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::pluck('title', 'id');
+        $categories = Category::pluck('title', 'id')->all();
         $product = Product::find($id);
         return view('admin.products.edit', compact('categories', 'product'));
     }
@@ -83,19 +83,18 @@ class ProductController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'price' => 'required',
             'quantity' => 'required',
+            'price' => 'required',
             'category_id' => 'required',
             'thumbnail' => 'nullable|image',
         ]);
 
-        $data = $request->all();
         $product = Product::find($id);
+        $data = $request->all();
 
         $data['thumbnail'] = Product::uploadImage($request, $product->thumbnail);
-        $product->update($request->all());
-        $product->thumbnail = $data['thumbnail'];
-        $product->save();
+
+        $product->update($data);
 
         return redirect()->route('products.index')->with('success', 'Изменения созранены');
     }
@@ -108,9 +107,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::find($id);
-        Storage::delete($product->thumbnail);
-        $product->delete();
+        Product::destroy($id);
         return redirect()->route('products.index')->with('success', 'Продукт удален');
     }
 }

@@ -44,7 +44,7 @@
               <table class="table table-bordered table-responsive">
                 <thead>
                   <tr>
-                    {{-- <th style="width: 10px">id</th> --}}
+                    <th style="width: 10px">id</th>
                     <th>Название</th>
                     <th>Описание</th>
                     <th>Кол-во</th>
@@ -58,15 +58,15 @@
                 <tbody>
                 @foreach ($products as $product)
                 <tr>
-                    {{-- <td>{{$product->id}}</td> --}}
+                    <td>{{$product->id}}</td>
                     <td>{{$product->title}}</td>
                     <td>{{$product->description}}</td>
                     <td>{{$product->quantity}}</td>
                     <td>{{$product->price}}</td>
-                    <td>{{$category->find($product->category_id)->title}}</td>
+                    <td>{{$cat[$product->category_id]}}</td>
                     <td>{{$product->status}}</td>
                     <td>
-                        <img width="200" src="{{$product->getImage()}}" alt="фото">
+                    <img src="{{$product->getImage()}}" width="200" alt="фото">
                     </td>
                     <td>
                         <a href="{{route('products.edit', $product->id)}}" class="btn btn-info btn-sm float-left mr-1">
@@ -95,9 +95,13 @@
         <!-- /.card-body -->
 
         <div class="card-footer clearfix">
-
             <ul class="pagination pagination-sm m-0 float-right">
-                {{ $products->links('pagination::bootstrap-4') }}
+              {{$products->links()}}
+              {{-- <li class="page-item"><a class="page-link" href="#">«</a></li> --}}
+              {{-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li> --}}
+              {{-- <li class="page-item"><a class="page-link" href="#">»</a></li> --}}
             </ul>
           </div>
         <!-- /.card-footer-->

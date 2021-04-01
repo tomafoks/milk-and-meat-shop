@@ -30,7 +30,7 @@
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Редактирование продукта "{{$product->title}}"</h3>
+                  <h3 class="card-title">Изменение продукта</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -58,7 +58,7 @@
                             <label>Категория</label>
                             <select class="form-control select2" name="category_id" style="width: 100%; @error('category_id') is-invalid @enderror" value="Выбор категории">
                               @foreach ($categories as $k=>$v)
-                              <option value="{{$k}}" @if ($k == $product->category_id) selected
+                              <option value="{{$k}}" @if ($k == $product->category_id) selected                        
                               @endif>{{$v}}</option>
                               @endforeach
                             </select>
@@ -75,7 +75,8 @@
                                 </div>
                             </div>
                             <div>
-                                <img width="200" src="{{$product->getImage()}}" alt="фото">
+                              <br>
+                              <img width="200" src="{{$product->getImage()}}" alt="фото">
                             </div>
                         </div>
                     </div>

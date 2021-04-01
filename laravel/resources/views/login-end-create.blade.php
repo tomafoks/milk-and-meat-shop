@@ -21,6 +21,29 @@
 <!-- login -->
 		<div class="w3_login">
 			<h3>Вход или Регистрация</h3>
+            <div class="container mt-2">
+                <div class="row">
+                    <div class="col-12">
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul class="list-unstyled">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $errors }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        @if (session()->has('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+                    </div>
+                </div>
+            </div>
 			<div class="w3_login_module">
 				<div class="module form-module">
 				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
@@ -28,22 +51,32 @@
 				  </div>
 				  <div class="form">
 					<h2>Вход в личный кабинет</h2>
-					<form action="#" method="post">
-						@csrf
-					<input type="text" name="Username" placeholder="Username" required=" ">
-					  <input type="password" name="Password" placeholder="Password" required=" ">
-					  <input type="submit" value="Login">
-					</form>
+					<form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
 				  </div>
 				  <div class="form">
 					<h2>Создать личный кабинет</h2>
 					<form action="{{route('register.store')}}" method="post">
 							@csrf
-						<input type="text" name="username" placeholder="Логин" required=" ">
+						<input type="text" value="{{ old('name') }}" name="name" placeholder="Логин" required=" ">
 						<input type="password" name="password" placeholder="Пароль" required=" ">
-						<input type="password_confirmation" name="password_check" placeholder="Повторить пароль" required=" ">
-						<input type="email" name="email" placeholder="Email адрес" required=" ">
-						<input type="text" name="phone" placeholder="Номре телефона" required=" ">
+						<input type="password" name="password_confirmation" placeholder="Повторить пароль" required=" ">
+						<input type="email" name="email" value="{{ old('email') }}" placeholder="Email адрес" required=" ">
+						<input type="text" name="phone" value="{{ old('phone') }}" placeholder="Номре телефона" required=" ">
 						<input type="submit" value="Регистрация">
 						</form>
 				  </div>
@@ -54,7 +87,7 @@
 				$('.toggle').click(function(){
 				  // Switches the Icon
 				  $(this).children('i').toggleClass('fa-pencil');
-				  // Switches the forms  
+				  // Switches the forms
 				  $('.form').animate({
 					height: "toggle",
 					'padding-top': 'toggle',
