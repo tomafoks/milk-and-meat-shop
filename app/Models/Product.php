@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,21 +17,6 @@ class Product extends Model
         'category_id',
         'thumbnail',
     ];
-    use Sluggable;
-
-    /**
-     * Return the sluggable configuration array for this model.
-     *
-     * @return array
-     */
-    public function sluggable(): array
-    {
-        return [
-            'slug' => [
-                'source' => 'title'
-            ]
-        ];
-    }
 
     function orders()
     {
@@ -59,9 +43,9 @@ class Product extends Model
     function getImage()
     {
         if (!$this->thumbnail) {
-            return asset('laravel/public/no_image.png');
+            return asset('no_image.png');
         }
-        return asset('laravel/public/uploads/' . $this->thumbnail);
+        return asset('uploads/' . $this->thumbnail);
     }
 
     function getPriceForCount()
