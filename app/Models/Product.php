@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Attribute;
+use Facade\Ignition\QueryRecorder\Query;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -16,6 +18,9 @@ class Product extends Model
         'price',
         'category_id',
         'thumbnail',
+        'hit',
+        'new',
+        'recommend',
     ];
 
     function orders()
@@ -80,5 +85,51 @@ class Product extends Model
 
     function removeAmountFromWarehouse()
     {
+        return $this->recommend === 1;
+    }
+
+    function setHitAttribute($value)
+    {
+        $this->attributes['hit'] = $value === 'on' ? 1 : 0;
+    }
+
+    function setNewAttribute($value)
+    {
+        $this->attributes['new'] = $value === 'on' ? 1 : 0;
+    }
+
+    function setRecommendAttribute($value)
+    {
+        $this->attributes['recommend'] = $value === 'on' ? 1 : 0;
+    }
+
+    function isHit()
+    {
+        return $this->hit === 1;
+    }
+
+    function isNew()
+    {
+        return $this->new === 1;
+    }
+
+    function isRecommend()
+    {
+        return $this->recommend === 1;
+    }
+
+    function scopeHit($query)
+    {
+        return $query->where('hit', 1);
+    }
+
+    function scopeNew($query)
+    {
+        return $query->where('new', 1);
+    }
+
+    function scopeRecommend($query)
+    {
+        return $query->where('recommend', 1);
     }
 }

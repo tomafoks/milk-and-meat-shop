@@ -42,6 +42,7 @@ class BasketController extends Controller
             $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
             if($product->checkQuantity($pivotRow->count)){
                 $pivotRow->count++;
+                
                 $pivotRow->update();
             } else {
                 session()->flash('worning', 'товара больше нет на складе');

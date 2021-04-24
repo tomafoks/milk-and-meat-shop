@@ -23,7 +23,7 @@ class Order extends Model
 
     function saveOrder($name, $phone)
     {
-        dd($this);
+
         if($this->status == 0){
             $this->name = $name;
             $this->phone = $phone;
@@ -34,5 +34,10 @@ class Order extends Model
             return true;
         }
         return false;
+    }
+
+    function scopeActive($query)
+    {
+        return $query->where('status', 1);
     }
 }

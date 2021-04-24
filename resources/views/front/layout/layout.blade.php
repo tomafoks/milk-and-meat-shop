@@ -272,6 +272,5 @@ $(document).ready(function(){
 			});
 	</script>
 <!-- //here ends scrolling icon -->
-<script>
 </body>
 </html>
