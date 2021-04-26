@@ -38,7 +38,7 @@
                         <td>{{$order->name}}</td>
                         <td>{{$order->phone}}</td>
                         <td>{{$order->created_at->format('H:i:s d/m/Y')}}</td>
-                        <td>{{$order->getFullSum()}}</td>
+                        <td>{{$order->calculateGetFullSum()}}</td>
                         <td>
                         <a href="{{route('orders.show', $order)}}" class="btn btn-info btn-sm float-left mr-1">
                                 <i class="fas fa-pencil-alt">Открыть</i>
@@ -48,9 +48,6 @@
                     @endforeach
                 </tbody>
             </table>
-            {{-- <div class="pull-right" style="margin-bottom: 10px">
-                <h1><a href="{{route('basket.place')}}"><span class="label label-success">Оформить заказ</span></a></h1>
-            </div> --}}
         </div>
     </div>
 </div>

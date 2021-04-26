@@ -1,7 +1,7 @@
 @extends('admin/layout/layout')
 
 @section('content')
-
+{{-- {{dd($product)}} --}}
     <!-- Content Wrapper. Contains page content -->
 
     <!-- Content Header (Page header) -->

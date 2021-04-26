@@ -54,7 +54,8 @@
 										<h4>{{$product->price}} руб.<span>{{-- перечеркнутая цена --}}</span></h4>
 										</div>
 										<div class="snipcart-details">
-											<form action="#" method="post">
+											<form action="{{ route('basket.add', $product->id) }}" method="post">
+												@csrf
 												@if ($product->isAvailable())
 													<fieldset>
 														<input type="hidden" name="quantity" value="1">

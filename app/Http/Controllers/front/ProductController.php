@@ -18,7 +18,7 @@ class ProductController extends Controller
     function show($id)
     {
         $popular = Product::where('hit', 1)->get();
-        $product = Product::findOrFail($id);
+        $product = Product::withTrashed()->findOrFail($id);
         return view('front.single', compact('product', 'popular'));
     }
 

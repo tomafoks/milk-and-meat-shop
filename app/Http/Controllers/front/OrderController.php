@@ -11,15 +11,16 @@ class OrderController extends Controller
 {
     function orders()
     {
-        $orders = Auth::user()->orders()->where('status', 1)->get();
+        $orders = Auth::user()->orders()->with('products')->where('status', 1)->get();
         return view('front.orders', compact('orders'));
     }
 
     function ordersShow(Order $order)
     {
+        $products = $order->products()->withTrashed()->get();
         if(!Auth::user()->orders->contains($order)){
             return back();
         }
-        return view('front.showOrders', compact('order'));
+        return view('front.showOrders', compact('order', 'products'));
     }
 }

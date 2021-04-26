@@ -18,11 +18,9 @@ class BasketIsNotEmpty
     public function handle(Request $request, Closure $next)
     {
         $order_id = session('order_id');
-        if (!is_null($order_id)) {
-            $order = Order::findOrFail($order_id);
-            if ($order->products->count() > 0) {
-                return $next($request);
-            }
+
+        if (!is_null($order_id) && Order::getFullSum() > 0) {
+            return $next($request);
         }
 
         session()->flash('worning', 'Корзина пуста!');

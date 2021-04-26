@@ -6,11 +6,14 @@ use Attribute;
 use Facade\Ignition\QueryRecorder\Query;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class Product extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'title',
         'description',
@@ -48,7 +51,7 @@ class Product extends Model
     function getImage()
     {
         if (!$this->thumbnail) {
-            return asset('no_image.png');
+            return asset('images/no_image.png');
         }
         return asset('uploads/' . $this->thumbnail);
     }
@@ -56,7 +59,7 @@ class Product extends Model
     function getPriceForCount()
     {
         if (!is_null($this->pivot)) {
-            return $this->pivot->count * $this->price;
+            return $this->getCoutnForBasket() * $this->price;
         }
         return $this->price;
     }
@@ -71,9 +74,10 @@ class Product extends Model
         return $this->quantity;
     }
 
+    //если меньше то товар не выводится
     function isAvailable()
     {
-        return $this->quantity > 0;
+        return !$this->trashed() && $this->quantity > 0;
     }
 
     function checkQuantity($count)

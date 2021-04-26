@@ -12,13 +12,30 @@ class Order extends Model
         return $this->belongsToMany(Product::class)->withPivot('count')->withTimestamps();
     }
 
-    function getFullPrice()
+    static function changeFullSum($changeSum)
+    {
+        $sum = self::getFullSum() + $changeSum;
+        session(['get_order_sum' => $sum]);
+        
+    }
+
+    static function getFullSum()
+    {
+        return session('get_order_sum', 0);
+    }
+
+    function calculateGetFullSum()
     {
         $sum = 0;
-        foreach ($this->products as $product) {
+        foreach ($this->products()->withTrashed()->get() as $product) {
             $sum += $product->getPriceForCount();
         }
         return $sum;
+    }
+
+    static function eraseOrderSum()
+    {
+        session()->forget('get_order_sum');
     }
 
     function saveOrder($name, $phone)

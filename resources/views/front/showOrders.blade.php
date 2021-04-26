@@ -23,28 +23,28 @@
             <table class="table table-bordered table-responsive">
               <thead>
                 <tr>
-                  <th style="width: 10px">id</th>
                   <th>Название</th>
                   <th>Кол-во</th>
                   <th>Цена</th>
                   <th>Фото</th>
-                  <th>Статус</th>
                 </tr>
               </thead>
               <tbody>
-              @foreach ($order->products as $product)
+              @foreach ($products as $product)
               <tr>
-                  <td>{{$product->id}}</td>
-                  <td>{{$product->title}}</td>
+                  <td><a href="{{route('single.product', $product->id)}}">{{$product->title}}</a></td>
                   <td>{{$product->getCoutnForBasket()}}</td>
-                  <td>{{$product->getPriceForCount()}}</td>
+                  <td>{{$product->getPriceForCount()}} руб.</td>
                   <td>
                     <img src="{{$product->getImage()}}" width="200" alt="фото">
                   </td>
-                  <td>{{$product->status}}</td>
-                </tr>
-              @endforeach
+                </tr>                  
+                  @endforeach
               </tbody>
+              <tr>
+                <td>Итого: </td>
+                <td>{{$order->calculateGetFullSum()}} руб.</td>
+              </tr>
             </table>
         </div>
     </div>

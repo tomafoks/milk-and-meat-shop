@@ -40,9 +40,9 @@ class BasketController extends Controller
         }
         if ($order->products->contains($productId)) {
             $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
-            if($product->checkQuantity($pivotRow->count)){
+            if ($product->checkQuantity($pivotRow->count)) {
                 $pivotRow->count++;
-                
+
                 $pivotRow->update();
             } else {
                 session()->flash('worning', 'товара больше нет на складе');
@@ -52,11 +52,14 @@ class BasketController extends Controller
             $order->products()->attach($productId);
         }
 
-        if (Auth::check()) { 
+        if (Auth::check()) {
             $order->user_id = Auth::id();
             $order->save();
         }
-        // $product = Product::find($productId);
+        $product = Product::find($productId);
+
+        Order::changeFullSum($product->price);
+
         session()->flash('success',  $product->title . ' добавлен в корзину');
 
         return redirect()->back();
@@ -81,6 +84,8 @@ class BasketController extends Controller
 
             $product = Product::find($productId);
 
+            Order::changeFullSum(- $product->price);
+
             session()->flash('worning',  $product->title . ' удален из корзины');
 
             return redirect()->route('basket.index');
@@ -100,6 +105,9 @@ class BasketController extends Controller
         } else {
             session()->flesh('worning', 'ОШИБКА, попробуйте еще раз');
         }
+
+        Order::eraseOrderSum();
+        
         return redirect()->route('index');
     }
 }

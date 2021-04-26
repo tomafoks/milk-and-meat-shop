@@ -73,8 +73,9 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $data = $request->all();
-        dd($data);
-        $data['thumbnail'] = Product::uploadImage($request, $product->thumbnail);
+        if($file = Product::uploadImage($request, $product->thumbnail)){
+            $data['thumbnail'] = $file;
+        }
         foreach (['new', 'hit', 'recommend'] as $fieldName) {
             if (!isset($data[$fieldName])) {
                 $data[$fieldName] = 0;
