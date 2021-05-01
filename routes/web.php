@@ -25,7 +25,7 @@ Route::post('/checkout', 'front\IndexController@checkout')->name('checkout');
 Route::post('/mail', 'front\IndexController@mail')->name('mail');
 
 // Заказы пользователя
-Route::group(['prefix' => 'orders', 'middleware' => 'isAuth'], function(){
+Route::group(['prefix' => 'orders', 'middleware' => 'isAuth'], function () {
     Route::get('/', 'front\OrderController@orders')->name('orders');
     Route::get('/show/{order}', 'front\OrderController@ordersShow')->name('orders.show');
 });
@@ -41,9 +41,9 @@ Route::group(['prefix' => 'basket', 'middleware' => 'baket_not_empty'], function
     Route::get('/', 'BasketController@index')->name('basket.index');
     Route::get('/place', 'BasketController@basketPlace')->name('basket.place');
     Route::post('/place', 'BasketController@confirm')->name('basket.confirm');
-    Route::post('/remove/{productId}', 'BasketController@basketRemove')->name('basket.remove');
+    Route::post('/remove/{product}', 'BasketController@basketRemove')->name('basket.remove');
 });
-Route::post('basket/add/{productId}', 'BasketController@basketAdd')->name('basket.add');
+Route::post('basket/add/{product}', 'BasketController@basketAdd')->name('basket.add');
 
 // Логаут
 Route::get('/logout', 'UserController@logout')->name('logout')->middleware('auth');

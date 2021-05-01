@@ -38,7 +38,7 @@
                   <td>
                     <img src="{{$product->getImage()}}" width="200" alt="фото">
                   </td>
-                </tr>                  
+                </tr>
                   @endforeach
               </tbody>
               <tr>

@@ -29,7 +29,7 @@
                         <div class="w3l_banner_nav_right_banner2">
                             <h3>Доставка <i>от </i> 1000 руб.</h3>
                             <div class="more">
-                                <a href="products.html" class="button--saqui button--round-l button--text-thick"
+                                <a href="{{route('products')}}" class="button--saqui button--round-l button--text-thick"
                                 data-text="Купить сейчас">Купить сейчас</a>
                             </div>
                         </div>

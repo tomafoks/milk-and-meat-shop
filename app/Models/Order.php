@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    protected $fillable = ['user_id'];
+
     function products()
     {
         return $this->belongsToMany(Product::class)->withPivot('count')->withTimestamps();
@@ -16,7 +18,7 @@ class Order extends Model
     {
         $sum = self::getFullSum() + $changeSum;
         session(['get_order_sum' => $sum]);
-        
+
     }
 
     static function getFullSum()
