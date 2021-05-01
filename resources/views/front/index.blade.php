@@ -11,7 +11,7 @@
                         <div class="w3l_banner_nav_right_banner">
                             <h3>Делаем продукты <span>из свежего</span>молока</h3>
                             <div class="more">
-                                <a href="products.html" class="button--saqui button--round-l button--text-thick"
+                                <a href="{{route('milk')}}" class="button--saqui button--round-l button--text-thick"
                                     data-text="Купить сейчас">Купить сейчас</a>
                             </div>
                         </div>
@@ -20,7 +20,7 @@
                         <div class="w3l_banner_nav_right_banner1">
                             <h3> Мясо <span> домяшнего</span> производства</h3>
                             <div class="more">
-                                <a href="products.html" class="button--saqui button--round-l button--text-thick"
+                                <a href="{{route('meet')}}" class="button--saqui button--round-l button--text-thick"
                                 data-text="Купить сейчас">Купить сейчас</a>
                             </div>
                         </div>
