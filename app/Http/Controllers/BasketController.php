@@ -21,7 +21,7 @@ class BasketController extends Controller
         $basket = new Basket();
         $order = $basket->getOrder();
         if(!$basket->countAvaliable()) {
-            session()->flash('worning', 'кол-во товара на складе не достурно для заказа');
+            session()->flash('worning', 'кол-во товара на складе не доступно для заказа');
             return redirect()->route('basket.index');
         }
         return view('basket.place', compact('order'));

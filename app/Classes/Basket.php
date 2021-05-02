@@ -13,6 +13,7 @@ class Basket
     function __construct($createOrder = false)
     {
         $orderId = session('order_id');
+
         if (is_null($orderId) && $createOrder) {
             $data = [];
             if (Auth::check()) {
@@ -30,17 +31,25 @@ class Basket
         return $this->order;
     }
 
-    function countAvaliable()
+    function countAvaliable($updateCount = false)
     {
-        foreach($this->order->products as $orderProduct) {
-            dd($this->getPivotRow);
-            dd($orderProduct->quantity);
+        foreach ($this->order->products as $orderProduct) {
+            if ($this->getPivotRow($orderProduct)->count > $orderProduct->quantity) {
+                return false;
+            }
+            if ($updateCount) {
+                $orderProduct->quantity -= $this->getPivotRow($orderProduct)->count;
+            }
         }
+        if ($updateCount) {
+            $this->order->products->map->save();
+        }
+        return true;
     }
 
     function saveOrder($name, $phon)
     {
-        if (!$this->countAvaliable()) {
+        if (!$this->countAvaliable(true)) {
             return false;
         }
         return $this->order->saveOrder($name, $phon);
@@ -69,7 +78,7 @@ class Basket
                 return false;
             }
             $pivotRow->update();
-            return redirect()->back();
+            // return redirect()->back();
         } else {
             if ($product->quantity == 0) {
                 return false;
