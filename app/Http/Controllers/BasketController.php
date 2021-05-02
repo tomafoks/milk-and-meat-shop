@@ -18,7 +18,12 @@ class BasketController extends Controller
 
     function basketPlace()
     {
-        $order = (new Basket())->getOrder();
+        $basket = new Basket();
+        $order = $basket->getOrder();
+        if(!$basket->countAvaliable()) {
+            session()->flash('worning', 'кол-во товара на складе не достурно для заказа');
+            return redirect()->route('basket.index');
+        }
         return view('basket.place', compact('order'));
     }
 
@@ -42,9 +47,6 @@ class BasketController extends Controller
         } else {
             session()->flash('worning', 'товара больше нет на складе');
         }
-
-
-
         return redirect()->back();
     }
 

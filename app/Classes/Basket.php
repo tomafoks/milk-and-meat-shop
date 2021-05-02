@@ -13,8 +13,6 @@ class Basket
     function __construct($createOrder = false)
     {
         $orderId = session('order_id');
-        $this->order = Order::findOrFail($orderId);
-
         if (is_null($orderId) && $createOrder) {
             $data = [];
             if (Auth::check()) {
@@ -32,8 +30,19 @@ class Basket
         return $this->order;
     }
 
+    function countAvaliable()
+    {
+        foreach($this->order->products as $orderProduct) {
+            dd($this->getPivotRow);
+            dd($orderProduct->quantity);
+        }
+    }
+
     function saveOrder($name, $phon)
     {
+        if (!$this->countAvaliable()) {
+            return false;
+        }
         return $this->order->saveOrder($name, $phon);
     }
 
